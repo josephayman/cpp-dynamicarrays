@@ -1,5 +1,6 @@
 #include <cassert>
 #include <iostream>
+#include <vector>
 
 #include "array_list.cpp"
 
@@ -50,10 +51,19 @@ void test_indexing_operator()
     std::cout << " - Success!\n";
 }
 
+void test_vector_constructor()
+{
+    std::vector<int> primes_values = {2, 3, 5, 7, 11};
+    ArrayList primes(primes_values);
+    std::cout << "Test vector constructor: ";
+    primes.print();
+}
+
 int main()
 {
     test_empty_array_has_length_zero();
     test_array_with_two_elements_appended_has_length_two();
     test_print();
     test_indexing_operator();
+    test_vector_constructor();
 }
