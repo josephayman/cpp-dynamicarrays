@@ -3,15 +3,33 @@
 
 class ArrayList
 {
-  private:
+private:
     // Array containing the acutaul data in the list
     int *_data;
     // Capacity of the array
     int _capacity = 1;
     // Size of the array
     int _size = 0;
+    // Growth factor for resizing
+    int _growth_factor = 2;
 
-  public:
+    /**
+     * @brief Resizes the internal array using the growth factor.
+     */
+    void resize()
+    {
+        int new_capacity = _capacity * _growth_factor;
+        int *new_data = new int[new_capacity];
+        for (int i = 0; i < _size; i++)
+        {
+            new_data[i] = _data[i];
+        }
+        delete[] _data;
+        _data = new_data;
+        _capacity = new_capacity;
+    }
+
+public:
     // Default constructor
     ArrayList()
     {
@@ -74,5 +92,20 @@ class ArrayList
             throw std::range_error("Index is out of bounds");
         }
         return _data[index];
+    }
+
+    /**
+     * @brief Add a value to the end of the array
+     *
+     * @param value The value to add
+     */
+    void append(int value)
+    {
+        if (_size >= _capacity)
+        {
+            resize();
+        }
+        _data[_size] = value;
+        _size++;
     }
 };
