@@ -36,6 +36,18 @@ public:
         _data = new int[_capacity];
     }
 
+    // Overloaded constructor that takes a vector of integers
+    ArrayList(std::vector<int> values)
+    {
+        _size = values.size();
+        _capacity = _size;
+        _data = new int[_capacity];
+        for (int i = 0; i < _size; i++)
+        {
+            _data[i] = values[i];
+        }
+    }
+
     // Destructor
     ~ArrayList()
     {
