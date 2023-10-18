@@ -163,11 +163,24 @@ public:
         _size--;
     }
 
+    /**
+     * @brief Remove and return a value at a given index
+     * 
+     * @param index The index to remove at
+    */
     int pop(int index)
     {
         get(index);
         int value = _data[index];
         remove(index);
         return value;
+    }
+
+    /**
+     * @brief Remove and return the last value in the array
+    */
+    int pop()
+    {
+        return pop(_size - 1);
     }
 };
