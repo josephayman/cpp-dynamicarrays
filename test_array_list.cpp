@@ -82,8 +82,22 @@ void test_insert()
     assert(a[2] == 0);
     assert(a[3] == 1);
     assert(a[4] == 44);
-    std::cout << " - Success!\n";
     a.print();
+    std::cout << " - Success!\n";
+}
+
+void test_remove()
+{
+    ArrayList a{{0, 1, 2, 3, 4}};
+    assert(a.length() == 5);
+    a.remove(0);
+    std::cout << "Test remove: ";
+    assert(a.length() == 4);
+    assert(a[0] == 1);
+    assert(a[1] == 2);
+    assert(a[2] == 3);
+    assert(a[3] == 4);
+    std::cout << " - Success!\n";
 }
 
 int main()
@@ -94,4 +108,5 @@ int main()
     test_indexing_operator();
     test_vector_constructor();
     test_insert();
+    test_remove();
 }

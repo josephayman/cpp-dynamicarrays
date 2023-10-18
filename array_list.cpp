@@ -120,12 +120,13 @@ public:
         _data[_size] = value;
         _size++;
     }
+
     /**
      * @brief Insert a value at a given index
-     * 
+     *
      * @param val The value to insert
      * @param index The index to insert at
-    */
+     */
     void insert(int val, int index)
     {
         if (index < 0 || index > _size)
@@ -142,5 +143,23 @@ public:
         }
         _data[index] = val;
         _size++;
+    }
+
+    /**
+     * @brief Remove a value at a given index
+     * 
+     * @param index The index to remove at
+    */
+    void remove(int index)
+    {
+        if (index < 0 || index >= _size)
+        {
+            throw std::range_error("Index is out of bounds");
+        }
+        for (int i = index; i < _size - 1; i++)
+        {
+            _data[i] = _data[i + 1];
+        }
+        _size--;
     }
 };
