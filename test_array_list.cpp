@@ -100,6 +100,19 @@ void test_remove()
     std::cout << " - Success!\n";
 }
 
+void test_pop_at_index()
+{
+    ArrayList a{{0, 1, 2, 3, 4}};
+    assert(a.length() == 5);
+    int value = a.pop(0);
+    std::cout << "Test pop at index: ";
+    assert(a.length() == 4);
+    assert(value == 0);
+    assert(a[0] == 1);
+    a.print();
+    std::cout << "Popped value: " << value << "\n - Success!\n";
+}
+
 int main()
 {
     test_empty_array_has_length_zero();
@@ -109,4 +122,5 @@ int main()
     test_vector_constructor();
     test_insert();
     test_remove();
+    test_pop_at_index();
 }

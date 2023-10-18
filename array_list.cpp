@@ -147,9 +147,9 @@ public:
 
     /**
      * @brief Remove a value at a given index
-     * 
+     *
      * @param index The index to remove at
-    */
+     */
     void remove(int index)
     {
         if (index < 0 || index >= _size)
@@ -161,5 +161,13 @@ public:
             _data[i] = _data[i + 1];
         }
         _size--;
+    }
+
+    int pop(int index)
+    {
+        get(index);
+        int value = _data[index];
+        remove(index);
+        return value;
     }
 };
