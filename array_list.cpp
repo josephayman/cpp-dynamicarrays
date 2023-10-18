@@ -120,4 +120,27 @@ public:
         _data[_size] = value;
         _size++;
     }
+    /**
+     * @brief Insert a value at a given index
+     * 
+     * @param val The value to insert
+     * @param index The index to insert at
+    */
+    void insert(int val, int index)
+    {
+        if (index < 0 || index > _size)
+        {
+            throw std::range_error("Index is out of bounds");
+        }
+        if (_size >= _capacity)
+        {
+            resize();
+        }
+        for (int i = _size; i > index; i--)
+        {
+            _data[i] = _data[i - 1];
+        }
+        _data[index] = val;
+        _size++;
+    }
 };
