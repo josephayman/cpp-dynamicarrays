@@ -253,4 +253,46 @@ public:
         }
         return max_index;
     }
+
+    /**
+     * @brief Return the smallest value in the array
+     */
+    int min()
+    {
+        if (_size == 0)
+        {
+            throw std::range_error("Array is empty");
+        }
+
+        int minValue = _data[0];
+        for (int i = 1; i < _size; i++)
+        {
+            if (_data[i] < minValue)
+            {
+                minValue = _data[i];
+            }
+        }
+        return minValue;
+    }
+
+    /**
+     * @brief Return the largest value in the array
+     */
+    int max()
+    {
+        if (_size == 0)
+        {
+            throw std::range_error("Array is empty");
+        }
+
+        int maxValue = _data[0];
+        for (int i = 1; i < _size; i++)
+        {
+            if (_data[i] > maxValue)
+            {
+                maxValue = _data[i];
+            }
+        }
+        return maxValue;
+    }
 };

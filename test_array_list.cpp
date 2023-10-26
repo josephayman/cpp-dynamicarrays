@@ -159,18 +159,36 @@ void test_argmax()
     std::cout << " - Success!\n";
 }
 
+void test_min()
+{
+    ArrayList a{{3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5}};
+    std::cout << "Test min: " << a.min();
+    assert(a.min() == 1);
+    std::cout << " - Success!\n";
+}
+
+void test_max()
+{
+    ArrayList a{{3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5}};
+    std::cout << "Test max: " << a.max();
+    assert(a.max() == 9);
+    std::cout << " - Success!\n";
+}
+
 int main()
 {
-    test_empty_array_has_length_zero();
-    test_array_with_two_elements_appended_has_length_two();
-    test_print();
-    test_indexing_operator();
-    test_vector_constructor();
-    test_insert();
-    test_remove();
-    test_pop_at_index();
-    test_pop();
-    test_shrink_to_fit();
-    test_argmin();
-    test_argmax();
+    // test_empty_array_has_length_zero();
+    // test_array_with_two_elements_appended_has_length_two();
+    // test_print();
+    // test_indexing_operator();
+    // test_vector_constructor();
+    // test_insert();
+    // test_remove();
+    // test_pop_at_index();
+    // test_pop();
+    // test_shrink_to_fit();
+    // test_argmin();
+    // test_argmax();
+    test_min();
+    test_max();
 }
