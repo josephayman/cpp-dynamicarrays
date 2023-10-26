@@ -141,6 +141,24 @@ void test_shrink_to_fit()
     std::cout << " - Success!\n";
 }
 
+void test_argmin()
+{
+    ArrayList a{{3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5}};
+    std::cout << "Test argmin: index " << a.argmin();
+    std::cout << " value: " << a[a.argmin()];
+    assert(a.argmin() == 1);
+    std::cout << " - Success!\n";
+}
+
+void test_argmax()
+{
+    ArrayList a{{3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5}};
+    std::cout << "Test argmax: index: " << a.argmax();
+    std::cout << " value: " << a[a.argmax()];
+    assert(a.argmax() == 5);
+    std::cout << " - Success!\n";
+}
+
 int main()
 {
     test_empty_array_has_length_zero();
@@ -153,4 +171,6 @@ int main()
     test_pop_at_index();
     test_pop();
     test_shrink_to_fit();
+    test_argmin();
+    test_argmax();
 }

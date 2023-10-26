@@ -42,7 +42,7 @@ private:
         delete[] _data;
         _data = new_data;
         _capacity = 1;
-        while (_capacity <=  _size)
+        while (_capacity <= _size)
         {
             _capacity *= _growth_factor;
         }
@@ -211,5 +211,46 @@ public:
     int pop()
     {
         return pop(_size - 1);
+    }
+
+    /**
+     * @brief Return the index of the smallest value in the array
+     */
+    int argmin()
+    {
+        if (_size == 0)
+        {
+            throw std::range_error("Cannot get argmin of empty array");
+        }
+        int min_index = 0;
+        for (int i = 1; i < _size; i++)
+        {
+            if (_data[i] < _data[min_index])
+            {
+                min_index = i;
+            }
+        }
+        return min_index;
+    }
+
+    /**
+     * @brief Return the index of the largest value in the array
+     */
+    int argmax()
+    {
+        if (_size == 0)
+        {
+            throw std::range_error("Cannot get argmax of empty array");
+        }
+
+        int max_index = 0;
+        for (int i = 1; i < _size; i++)
+        {
+            if (_data[i] > _data[max_index])
+            {
+                max_index = i;
+            }
+        }
+        return max_index;
     }
 };
