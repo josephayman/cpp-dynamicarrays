@@ -295,4 +295,41 @@ public:
         }
         return maxValue;
     }
+
+    /**
+     * @brief Return the number of times a value appears in the array
+     */
+    int count(int value)
+    {
+        int count = 0;
+        for (int i = 0; i < _size; i++)
+        {
+            if (_data[i] == value)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    /**
+     * @brief Sort the array in place (bubble sort O(n^2)).
+     */
+
+    // Er det bedre å returnere en ny array istedenfor å endre den originale?
+    void sort()
+    {
+        for (int i = 0; i < _size - 1; i++)
+        {
+            for (int j = 0; j < _size - i - 1; j++)
+            {
+                if (_data[j] > _data[j + 1])
+                {
+                    int temp = _data[j];
+                    _data[j] = _data[j + 1];
+                    _data[j + 1] = temp;
+                }
+            }
+        }
+    }
 };

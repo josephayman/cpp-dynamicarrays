@@ -175,20 +175,53 @@ void test_max()
     std::cout << " - Success!\n";
 }
 
+void test_count()
+{
+    ArrayList a{{3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5}};
+    int value = 5;
+    int count = a.count(value);
+    std::cout << "Test count: " << count;
+    assert(count == 3);
+    std::cout << " - Success!\n";
+}
+
+void test_sort()
+{
+    ArrayList a{{3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5}};
+    a.print();
+    a.sort();
+    std::cout << "Test sort: ";
+    a.print();
+    assert(a[0] == 1);
+    assert(a[1] == 1);
+    assert(a[2] == 2);
+    assert(a[3] == 3);
+    assert(a[4] == 3);
+    assert(a[5] == 4);
+    assert(a[6] == 5);
+    assert(a[7] == 5);
+    assert(a[8] == 5);
+    assert(a[9] == 6);
+    assert(a[10] == 9);
+    std::cout << " - Success!\n";
+}
+
 int main()
 {
-    // test_empty_array_has_length_zero();
-    // test_array_with_two_elements_appended_has_length_two();
-    // test_print();
-    // test_indexing_operator();
-    // test_vector_constructor();
-    // test_insert();
-    // test_remove();
-    // test_pop_at_index();
-    // test_pop();
-    // test_shrink_to_fit();
-    // test_argmin();
-    // test_argmax();
+    test_empty_array_has_length_zero();
+    test_array_with_two_elements_appended_has_length_two();
+    test_print();
+    test_indexing_operator();
+    test_vector_constructor();
+    test_insert();
+    test_remove();
+    test_pop_at_index();
+    test_pop();
+    test_shrink_to_fit();
+    test_argmin();
+    test_argmax();
     test_min();
     test_max();
+    test_count();
+    test_sort();
 }
