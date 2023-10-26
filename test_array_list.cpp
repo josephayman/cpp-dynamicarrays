@@ -126,6 +126,21 @@ void test_pop()
     std::cout << "Popped value: " << value << "\n - Success!\n";
 }
 
+void test_shrink_to_fit()
+{
+    ArrayList a{{0, 1, 2, 3}};
+    assert(a.capacity() == 4);
+    a.append(4);
+    a.append(5);
+    assert(a.capacity() == 8);
+    a.pop();
+    a.pop();
+    a.pop();
+    std::cout << "Test shrink to fit: ";
+    assert(a.capacity() == 4);
+    std::cout << " - Success!\n";
+}
+
 int main()
 {
     test_empty_array_has_length_zero();
@@ -137,4 +152,5 @@ int main()
     test_remove();
     test_pop_at_index();
     test_pop();
+    test_shrink_to_fit();
 }

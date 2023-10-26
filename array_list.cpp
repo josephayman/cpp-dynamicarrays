@@ -29,6 +29,25 @@ private:
         _capacity = new_capacity;
     }
 
+    /**
+     * @brief Shrinks the internal array to the smallest growth factor that can fit the data (2^n).
+     */
+    void shrink_to_fit()
+    {
+        int *new_data = new int[_size];
+        for (int i = 0; i < _size; i++)
+        {
+            new_data[i] = _data[i];
+        }
+        delete[] _data;
+        _data = new_data;
+        _capacity = 1;
+        while (_capacity <=  _size)
+        {
+            _capacity *= _growth_factor;
+        }
+    }
+
 public:
     // Default constructor
     ArrayList()
@@ -58,6 +77,12 @@ public:
     int length()
     {
         return _size;
+    }
+
+    // Capacity of array
+    int capacity()
+    {
+        return _capacity;
     }
 
     /**
@@ -161,13 +186,17 @@ public:
             _data[i] = _data[i + 1];
         }
         _size--;
+        if (_size <= _capacity / 2)
+        {
+            shrink_to_fit();
+        }
     }
 
     /**
      * @brief Remove and return a value at a given index
-     * 
+     *
      * @param index The index to remove at
-    */
+     */
     int pop(int index)
     {
         get(index);
@@ -178,7 +207,7 @@ public:
 
     /**
      * @brief Remove and return the last value in the array
-    */
+     */
     int pop()
     {
         return pop(_size - 1);
