@@ -1,7 +1,29 @@
 # H23_project2_josefam
 Project 2 for josefam (josefam@mail.uio.no)
 
+## Get started
+Start by cloning the repository:
+```bash
+git clone https://github.uio.no/IN1910/H23_project1_carlk_josefam
+cd H23_project1_carlk_josefam
+```
 
+## How to Compile and run
+Compile and run the program with the following commands:
+```bash
+clang++ -std=c++14 test_array_list.cpp -o test_array_list
+```
+Adding the **-std=c++14** flag is **necessary** because I newer features and syntax from C++14.
+
+And then execute the program with ./test_array_list
+
+## List of tasks completed
+
+All of the tasks in the project description has been completed. Compiled, run and tested on Mac OS with clang++ 14.0.0.
+- [x] Exercise 1
+- [x] Exercise 2
+- [x] Exercise 3
+- [x] Exercise 4
 
 
 ## Exercise 3 a)
