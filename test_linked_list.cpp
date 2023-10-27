@@ -148,6 +148,14 @@ void test_min()
     std::cout << " - Success!\n";
 }
 
+void test_max()
+{
+    LinkedList ll{{43, 34, 75, 3432, 2}};
+    std::cout << "Test max: ";
+    assert(ll.max() == 3432);
+    std::cout << " - Success!\n";
+}
+
 int main()
 {
     test_empty_list_has_zero_length();
@@ -160,5 +168,6 @@ int main()
     test_pop_at_index();
     test_pop();
     test_min();
+    test_max();
     return 0;
 }

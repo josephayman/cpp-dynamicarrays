@@ -278,4 +278,26 @@ public:
         }
         return min;
     }
+
+    /**
+     * @brief Return the maximum value in the list
+    */
+    int max()
+    {
+        if (head == nullptr)
+        {
+            throw std::range_error("List is empty");
+        }
+        int max = head->value;
+        Node *current = head;
+        while (current != nullptr)
+        {
+            if (current->value > max)
+            {
+                max = current->value;
+            }
+            current = current->next;
+        }
+        return max;
+    }
 };
