@@ -72,27 +72,28 @@ void test_vector_constructor()
     std::cout << " - Success!\n";
 }
 
-// void test_remove() {
-//     LinkedList ll{};
-//     ll.append(1);
-//     ll.append(2);
-//     ll.append(3);
-//     ll.append(4);
+void test_remove()
+{
+    LinkedList ll{};
+    ll.append(1);
+    ll.append(2);
+    ll.append(3);
+    ll.append(4);
 
-//     std::cout << "Test remove: ";
+    std::cout << "Test remove: ";
 
-//     ll.remove(0);
-//     assert(ll[0] == 2);
+    ll.remove(0);
+    assert(ll[0] == 2);
 
-//     ll.remove(1); 
-//     assert(ll[1] == 4);
+    ll.remove(1);
+    assert(ll[1] == 4);
 
-//     ll.remove(1);
-//     assert(ll.length() == 1);
-//     assert(ll[0] == 2);
+    ll.remove(1);
+    assert(ll.length() == 1);
+    assert(ll[0] == 2);
 
-//     std::cout << " - Success!\n";
-// }
+    std::cout << " - Success!\n";
+}
 
 // void test_pop_at_index() {
 //     LinkedList ll{};
@@ -145,5 +146,6 @@ int main()
     test_index_operator();
     test_insert();
     test_vector_constructor();
+    test_remove();
     return 0;
 }

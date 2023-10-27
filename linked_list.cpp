@@ -208,30 +208,28 @@ public:
     void remove(int index)
     {
         check_index_out_of_bounds(index);
-        if (index == 0)
+        Node *current = find_node_at_index(index);
+
+        if (current == head)
         {
-            Node *next = head->next;
-            delete head;
-            head = next;
-            head->prev = nullptr;
+            head = head->next;
+            if (head)
+            {
+                head->prev = nullptr;
+            }
         }
-        else if (index == _size - 1)
+        else if (current == tail)
         {
-            Node *prev = tail->prev;
-            delete tail;
-            tail = prev;
+            tail = tail->prev;
             tail->next = nullptr;
         }
         else
         {
-            Node *current = head;
-            for (int i = 0; i < index; i++)
-            {
-                current = current->next;
-            }
             current->prev->next = current->next;
             current->next->prev = current->prev;
-            delete current;
         }
+
+        delete current;
+        _size--;
     }
 };
