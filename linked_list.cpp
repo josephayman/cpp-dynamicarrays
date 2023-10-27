@@ -147,5 +147,14 @@ public:
         _size++;
     }
 
-    
+    /**
+     * @brief overload the [] operator to get the value at a given index
+     */
+    int &operator[](int index)
+    {
+        check_index_out_of_bounds(index);
+        Node *current = find_node_at_index(index);
+        return current->value;
+    }
+
 };
