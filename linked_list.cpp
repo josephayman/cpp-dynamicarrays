@@ -7,13 +7,17 @@ struct Node
     int value;
     // Pointer to the next node
     Node *next = nullptr;
+    // Pointer to the previous node
+    Node *prev = nullptr;
 };
 
 class LinkedList
 {
-  private:
+private:
     // Pointer to the first element in the list
     Node *head = nullptr;
+    // Pointer to the last element in the list
+    Node *tail = nullptr;
     // Size of the list
     int _size = 0;
 
@@ -29,7 +33,7 @@ class LinkedList
             throw std::range_error("Index out of bounds");
     }
 
-  public:
+public:
     // Default constructor
     LinkedList()
     {
@@ -87,7 +91,20 @@ class LinkedList
      */
     void push_front(int val)
     {
-        head = new Node{val, head};
+        if (head == nullptr)
+        {
+            head = new Node;
+            head->value = val;
+            tail = head;
+        }
+        else
+        {
+            Node *new_node = new Node;
+            new_node->value = val;
+            new_node->next = head;
+            head->prev = new_node;
+            head = new_node;
+        }
         _size++;
     }
 };
