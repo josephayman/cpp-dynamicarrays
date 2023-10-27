@@ -35,9 +35,9 @@ private:
 
     /**
      * @brief Find the node at a given index
-     * 
+     *
      * @param index The index of the node to be found
-    */
+     */
     Node *find_node_at_index(int index)
     {
         Node *current = head;
@@ -123,4 +123,29 @@ public:
         _size++;
     }
 
+    /**
+     * @brief Add element to the end of the list
+     *
+     * @param val The value to be added
+     */
+    void append(int val)
+    {
+        if (head == nullptr)
+        {
+            head = new Node;
+            head->value = val;
+            tail = head;
+        }
+        else
+        {
+            Node *new_node = new Node;
+            new_node->value = val;
+            tail->next = new_node;
+            new_node->prev = tail;
+            tail = new_node;
+        }
+        _size++;
+    }
+
+    
 };
