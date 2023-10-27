@@ -199,4 +199,39 @@ public:
             _size++;
         }
     }
+
+    /**
+     * @brief Remove an element at a given index
+     *
+     * @param index The index of the element to be removed
+     */
+    void remove(int index)
+    {
+        check_index_out_of_bounds(index);
+        if (index == 0)
+        {
+            Node *next = head->next;
+            delete head;
+            head = next;
+            head->prev = nullptr;
+        }
+        else if (index == _size - 1)
+        {
+            Node *prev = tail->prev;
+            delete tail;
+            tail = prev;
+            tail->next = nullptr;
+        }
+        else
+        {
+            Node *current = head;
+            for (int i = 0; i < index; i++)
+            {
+                current = current->next;
+            }
+            current->prev->next = current->next;
+            current->next->prev = current->prev;
+            delete current;
+        }
+    }
 };
