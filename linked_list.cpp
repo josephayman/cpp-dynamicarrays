@@ -157,4 +157,37 @@ public:
         return current->value;
     }
 
+    /**
+     * @brief Insert a value at a given index
+     *
+     * @param val The value to be inserted
+     * @param index The index at which the value should be inserted
+     */
+    void insert(int val, int index)
+    {
+        check_index_out_of_bounds(index);
+        if (index == 0)
+        {
+            push_front(val);
+        }
+        else if (index == _size)
+        {
+            append(val);
+        }
+        else
+        {
+            Node *current = head;
+            for (int i = 0; i < index; i++)
+            {
+                current = current->next;
+            }
+            Node *new_node = new Node;
+            new_node->value = val;
+            new_node->next = current;
+            new_node->prev = current->prev;
+            current->prev->next = new_node;
+            current->prev = new_node;
+            _size++;
+        }
+    }
 };
