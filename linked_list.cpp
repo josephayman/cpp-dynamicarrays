@@ -256,4 +256,26 @@ public:
     {
         return pop(_size - 1);
     }
+
+    /**
+     * @brief Return the minimum value in the list
+    */
+    int min()
+    {
+        if (head == nullptr)
+        {
+            throw std::range_error("List is empty");
+        }
+        int min = head->value;
+        Node *current = head;
+        while (current != nullptr)
+        {
+            if (current->value < min)
+            {
+                min = current->value;
+            }
+            current = current->next;
+        }
+        return min;
+    }
 };

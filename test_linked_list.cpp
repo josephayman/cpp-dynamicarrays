@@ -95,7 +95,8 @@ void test_remove()
     std::cout << " - Success!\n";
 }
 
-void test_pop_at_index() {
+void test_pop_at_index()
+{
     LinkedList ll{};
     ll.append(1);
     ll.append(2);
@@ -120,7 +121,8 @@ void test_pop_at_index() {
     std::cout << " - Success!\n";
 }
 
-void test_pop() {
+void test_pop()
+{
     LinkedList ll{};
     ll.append(1);
     ll.append(2);
@@ -138,6 +140,14 @@ void test_pop() {
     std::cout << " - Success!\n";
 }
 
+void test_min()
+{
+    LinkedList ll{{43, 34, 75, 3432, 2}};
+    std::cout << "Test min: ";
+    assert(ll.min() == 2);
+    std::cout << " - Success!\n";
+}
+
 int main()
 {
     test_empty_list_has_zero_length();
@@ -149,5 +159,6 @@ int main()
     test_remove();
     test_pop_at_index();
     test_pop();
+    test_min();
     return 0;
 }
