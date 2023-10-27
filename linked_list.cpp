@@ -232,4 +232,28 @@ public:
         delete current;
         _size--;
     }
+
+    /**
+     * @brief Remove element at given index, returning it
+     *
+     * @param index The index of the element to be removed
+     */
+    int pop(int index)
+    {
+        check_index_out_of_bounds(index);
+        Node *current = find_node_at_index(index);
+        int value = current->value;
+
+        remove(index);
+        return value;
+    }
+
+    /**
+     * @brief Remove the last element in the list, returning it
+     *
+     */
+    int pop()
+    {
+        return pop(_size - 1);
+    }
 };

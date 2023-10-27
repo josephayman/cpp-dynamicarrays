@@ -95,48 +95,48 @@ void test_remove()
     std::cout << " - Success!\n";
 }
 
-// void test_pop_at_index() {
-//     LinkedList ll{};
-//     ll.append(1);
-//     ll.append(2);
-//     ll.append(3);
-//     ll.append(4);
+void test_pop_at_index() {
+    LinkedList ll{};
+    ll.append(1);
+    ll.append(2);
+    ll.append(3);
+    ll.append(4);
 
-//     std::cout << "Test pop at index: ";
+    std::cout << "Test pop at index: ";
 
-//     int val = ll.pop(0);
-//     assert(val == 1);
-//     assert(ll[0] == 2);
+    int val = ll.pop(0);
+    assert(val == 1);
+    assert(ll[0] == 2);
 
-//     val = ll.pop(1);
-//     assert(val == 3);
-//     assert(ll[1] == 4);
+    val = ll.pop(1);
+    assert(val == 3);
+    assert(ll[1] == 4);
 
-//     val = ll.pop(1);
-//     assert(val == 4);
-//     assert(ll.length() == 1);
-//     assert(ll[0] == 2);
+    val = ll.pop(1);
+    assert(val == 4);
+    assert(ll.length() == 1);
+    assert(ll[0] == 2);
 
-//     std::cout << " - Success!\n";
-// }
+    std::cout << " - Success!\n";
+}
 
-// void test_pop() {
-//     LinkedList ll{};
-//     ll.append(1);
-//     ll.append(2);
-//     ll.append(3);
-//     ll.append(4);
+void test_pop() {
+    LinkedList ll{};
+    ll.append(1);
+    ll.append(2);
+    ll.append(3);
+    ll.append(4);
 
-//     std::cout << "Test pop: ";
+    std::cout << "Test pop: ";
 
-//     int val = ll.pop();
-//     assert(val == 4);
+    int val = ll.pop();
+    assert(val == 4);
 
-//     val = ll.pop();
-//     assert(val == 3);
+    val = ll.pop();
+    assert(val == 3);
 
-//     std::cout << " - Success!\n";
-// }
+    std::cout << " - Success!\n";
+}
 
 int main()
 {
@@ -147,5 +147,7 @@ int main()
     test_insert();
     test_vector_constructor();
     test_remove();
+    test_pop_at_index();
+    test_pop();
     return 0;
 }
