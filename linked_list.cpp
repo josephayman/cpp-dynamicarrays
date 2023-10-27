@@ -54,6 +54,15 @@ public:
     {
     }
 
+    // Vector initializer constructor
+    LinkedList(std::vector<int> values)
+    {
+        for (int v : values)
+        {
+            append(v);
+        }
+    }
+
     // Destructor
     ~LinkedList()
     {
