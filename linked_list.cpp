@@ -33,6 +33,21 @@ private:
             throw std::range_error("Index out of bounds");
     }
 
+    /**
+     * @brief Find the node at a given index
+     * 
+     * @param index The index of the node to be found
+    */
+    Node *find_node_at_index(int index)
+    {
+        Node *current = head;
+        for (int i = 0; i < index; i++)
+        {
+            current = current->next;
+        }
+        return current;
+    }
+
 public:
     // Default constructor
     LinkedList()
@@ -107,4 +122,5 @@ public:
         }
         _size++;
     }
+
 };
