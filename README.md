@@ -1,11 +1,11 @@
 # H23_project2_josefam
-Project 2 for josefam (josefam@mail.uio.no)
+This a school project where I developed various data structures in C++ (C++14 standard), focusing on dynamic arrays (array lists) and doubly linked lists. The project involved extending these structures, analyzing their behavior and efficiency, and comparing their performance.
 
 ## Get started
 Start by cloning the repository:
 ```bash
-git clone https://github.uio.no/IN1910/H23_project1_carlk_josefam
-cd H23_project1_carlk_josefam
+git clone https://github.com/josephayman/cpp-dynamicarrays
+cd cpp-dynamicarrays
 ```
 
 ## How to Compile and run
